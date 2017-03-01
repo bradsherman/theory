@@ -1,0 +1,1187 @@
+
+M1: TM from Example 3.9
+M1/M1-Accept.txt
+=======================
+
+Transition Rules
+----------------
+Rule 1: q1, 0 ==> q2, x, R
+Rule 2: q1, # ==> q8, #, R
+Rule 3: q1, 1 ==> q3, x, R
+Rule 4: q2, 0 ==> q2, 0, R
+Rule 5: q2, 1 ==> q2, 1, R
+Rule 6: q2, # ==> q4, #, R
+Rule 7: q3, 0 ==> q3, 0, R
+Rule 8: q3, 1 ==> q3, 1, R
+Rule 9: q3, # ==> q5, #, R
+Rule 10: q4, x ==> q4, x, R
+Rule 11: q4, 0 ==> q6, x, L
+Rule 12: q5, x ==> q5, x, R
+Rule 13: q5, 1 ==> q6, x, L
+Rule 14: q6, 0 ==> q6, 0, L
+Rule 15: q6, 1 ==> q6, 1, L
+Rule 16: q6, x ==> q6, x, L
+Rule 17: q6, # ==> q7, #, L
+Rule 18: q7, 0 ==> q7, 0, L
+Rule 19: q7, 1 ==> q7, 1, L
+Rule 20: q7, x ==> q1, x, R
+Rule 21: q8, x ==> q8, x, R
+Rule 22: q8, _ ==> qaccept, x, R
+
+String: 0#0
+1@0#q10#0
+2@1#xq2#0
+3@2#x#q40
+4@1#xq6#x
+5@0#q7x#x
+6@1#xq1#x
+7@2#x#q8x
+8@3#x#xq8_
+9@4#x#xxqaccept
+Accepted
+
+String: 1#1
+1@0#q11#1
+2@1#xq3#1
+3@2#x#q51
+4@1#xq6#x
+5@0#q7x#x
+6@1#xq1#x
+7@2#x#q8x
+8@3#x#xq8_
+9@4#x#xxqaccept
+Accepted
+
+String: #
+1@0#q1#
+2@1##q8_
+3@2##xqaccept
+Accepted
+
+String: 010#010
+1@0#q1010#010
+2@1#xq210#010
+3@2#x1q20#010
+4@3#x10q2#010
+5@4#x10#q4010
+6@3#x10q6#x10
+7@2#x1q70#x10
+8@1#xq710#x10
+9@0#q7x10#x10
+10@1#xq110#x10
+11@2#xxq30#x10
+12@3#xx0q3#x10
+13@4#xx0#q5x10
+14@5#xx0#xq510
+15@4#xx0#q6xx0
+16@3#xx0q6#xx0
+17@2#xxq70#xx0
+18@1#xq7x0#xx0
+19@2#xxq10#xx0
+20@3#xxxq2#xx0
+21@4#xxx#q4xx0
+22@5#xxx#xq4x0
+23@6#xxx#xxq40
+24@5#xxx#xq6xx
+25@4#xxx#q6xxx
+26@3#xxxq6#xxx
+27@2#xxq7x#xxx
+28@3#xxxq1#xxx
+29@4#xxx#q8xxx
+30@5#xxx#xq8xx
+31@6#xxx#xxq8x
+32@7#xxx#xxxq8_
+33@8#xxx#xxxxqaccept
+Accepted
+
+String: 100110#100110
+1@0#q1100110#100110
+2@1#xq300110#100110
+3@2#x0q30110#100110
+4@3#x00q3110#100110
+5@4#x001q310#100110
+6@5#x0011q30#100110
+7@6#x00110q3#100110
+8@7#x00110#q5100110
+9@6#x00110q6#x00110
+10@5#x0011q70#x00110
+11@4#x001q710#x00110
+12@3#x00q7110#x00110
+13@2#x0q70110#x00110
+14@1#xq700110#x00110
+15@0#q7x00110#x00110
+16@1#xq100110#x00110
+17@2#xxq20110#x00110
+18@3#xx0q2110#x00110
+19@4#xx01q210#x00110
+20@5#xx011q20#x00110
+21@6#xx0110q2#x00110
+22@7#xx0110#q4x00110
+23@8#xx0110#xq400110
+24@7#xx0110#q6xx0110
+25@6#xx0110q6#xx0110
+26@5#xx011q70#xx0110
+27@4#xx01q710#xx0110
+28@3#xx0q7110#xx0110
+29@2#xxq70110#xx0110
+30@1#xq7x0110#xx0110
+31@2#xxq10110#xx0110
+32@3#xxxq2110#xx0110
+33@4#xxx1q210#xx0110
+34@5#xxx11q20#xx0110
+35@6#xxx110q2#xx0110
+36@7#xxx110#q4xx0110
+37@8#xxx110#xq4x0110
+38@9#xxx110#xxq40110
+39@8#xxx110#xq6xx110
+40@7#xxx110#q6xxx110
+41@6#xxx110q6#xxx110
+42@5#xxx11q70#xxx110
+43@4#xxx1q710#xxx110
+44@3#xxxq7110#xxx110
+45@2#xxq7x110#xxx110
+46@3#xxxq1110#xxx110
+47@4#xxxxq310#xxx110
+48@5#xxxx1q30#xxx110
+49@6#xxxx10q3#xxx110
+50@7#xxxx10#q5xxx110
+51@8#xxxx10#xq5xx110
+52@9#xxxx10#xxq5x110
+53@10#xxxx10#xxxq5110
+54@9#xxxx10#xxq6xx10
+55@8#xxxx10#xq6xxx10
+56@7#xxxx10#q6xxxx10
+57@6#xxxx10q6#xxxx10
+58@5#xxxx1q70#xxxx10
+59@4#xxxxq710#xxxx10
+60@3#xxxq7x10#xxxx10
+61@4#xxxxq110#xxxx10
+62@5#xxxxxq30#xxxx10
+63@6#xxxxx0q3#xxxx10
+64@7#xxxxx0#q5xxxx10
+65@8#xxxxx0#xq5xxx10
+66@9#xxxxx0#xxq5xx10
+67@10#xxxxx0#xxxq5x10
+68@11#xxxxx0#xxxxq510
+69@10#xxxxx0#xxxq6xx0
+70@9#xxxxx0#xxq6xxx0
+71@8#xxxxx0#xq6xxxx0
+72@7#xxxxx0#q6xxxxx0
+73@6#xxxxx0q6#xxxxx0
+74@5#xxxxxq70#xxxxx0
+75@4#xxxxq7x0#xxxxx0
+76@5#xxxxxq10#xxxxx0
+77@6#xxxxxxq2#xxxxx0
+78@7#xxxxxx#q4xxxxx0
+79@8#xxxxxx#xq4xxxx0
+80@9#xxxxxx#xxq4xxx0
+81@10#xxxxxx#xxxq4xx0
+82@11#xxxxxx#xxxxq4x0
+83@12#xxxxxx#xxxxxq40
+84@11#xxxxxx#xxxxq6xx
+85@10#xxxxxx#xxxq6xxx
+86@9#xxxxxx#xxq6xxxx
+87@8#xxxxxx#xq6xxxxx
+88@7#xxxxxx#q6xxxxxx
+89@6#xxxxxxq6#xxxxxx
+90@5#xxxxxq7x#xxxxxx
+91@6#xxxxxxq1#xxxxxx
+92@7#xxxxxx#q8xxxxxx
+93@8#xxxxxx#xq8xxxxx
+94@9#xxxxxx#xxq8xxxx
+95@10#xxxxxx#xxxq8xxx
+96@11#xxxxxx#xxxxq8xx
+97@12#xxxxxx#xxxxxq8x
+98@13#xxxxxx#xxxxxxq8_
+99@14#xxxxxx#xxxxxxxqaccept
+Accepted
+
+String: 10101#10101
+1@0#q110101#10101
+2@1#xq30101#10101
+3@2#x0q3101#10101
+4@3#x01q301#10101
+5@4#x010q31#10101
+6@5#x0101q3#10101
+7@6#x0101#q510101
+8@5#x0101q6#x0101
+9@4#x010q71#x0101
+10@3#x01q701#x0101
+11@2#x0q7101#x0101
+12@1#xq70101#x0101
+13@0#q7x0101#x0101
+14@1#xq10101#x0101
+15@2#xxq2101#x0101
+16@3#xx1q201#x0101
+17@4#xx10q21#x0101
+18@5#xx101q2#x0101
+19@6#xx101#q4x0101
+20@7#xx101#xq40101
+21@6#xx101#q6xx101
+22@5#xx101q6#xx101
+23@4#xx10q71#xx101
+24@3#xx1q701#xx101
+25@2#xxq7101#xx101
+26@1#xq7x101#xx101
+27@2#xxq1101#xx101
+28@3#xxxq301#xx101
+29@4#xxx0q31#xx101
+30@5#xxx01q3#xx101
+31@6#xxx01#q5xx101
+32@7#xxx01#xq5x101
+33@8#xxx01#xxq5101
+34@7#xxx01#xq6xx01
+35@6#xxx01#q6xxx01
+36@5#xxx01q6#xxx01
+37@4#xxx0q71#xxx01
+38@3#xxxq701#xxx01
+39@2#xxq7x01#xxx01
+40@3#xxxq101#xxx01
+41@4#xxxxq21#xxx01
+42@5#xxxx1q2#xxx01
+43@6#xxxx1#q4xxx01
+44@7#xxxx1#xq4xx01
+45@8#xxxx1#xxq4x01
+46@9#xxxx1#xxxq401
+47@8#xxxx1#xxq6xx1
+48@7#xxxx1#xq6xxx1
+49@6#xxxx1#q6xxxx1
+50@5#xxxx1q6#xxxx1
+51@4#xxxxq71#xxxx1
+52@3#xxxq7x1#xxxx1
+53@4#xxxxq11#xxxx1
+54@5#xxxxxq3#xxxx1
+55@6#xxxxx#q5xxxx1
+56@7#xxxxx#xq5xxx1
+57@8#xxxxx#xxq5xx1
+58@9#xxxxx#xxxq5x1
+59@10#xxxxx#xxxxq51
+60@9#xxxxx#xxxq6xx
+61@8#xxxxx#xxq6xxx
+62@7#xxxxx#xq6xxxx
+63@6#xxxxx#q6xxxxx
+64@5#xxxxxq6#xxxxx
+65@4#xxxxq7x#xxxxx
+66@5#xxxxxq1#xxxxx
+67@6#xxxxx#q8xxxxx
+68@7#xxxxx#xq8xxxx
+69@8#xxxxx#xxq8xxx
+70@9#xxxxx#xxxq8xx
+71@10#xxxxx#xxxxq8x
+72@11#xxxxx#xxxxxq8_
+73@12#xxxxx#xxxxxxqaccept
+Accepted
+
+M1: TM from Example 3.9
+M1/M1-Reject.txt
+=======================
+
+Transition Rules
+----------------
+Rule 1: q1, 0 ==> q2, x, R
+Rule 2: q1, # ==> q8, #, R
+Rule 3: q1, 1 ==> q3, x, R
+Rule 4: q2, 0 ==> q2, 0, R
+Rule 5: q2, 1 ==> q2, 1, R
+Rule 6: q2, # ==> q4, #, R
+Rule 7: q3, 0 ==> q3, 0, R
+Rule 8: q3, 1 ==> q3, 1, R
+Rule 9: q3, # ==> q5, #, R
+Rule 10: q4, x ==> q4, x, R
+Rule 11: q4, 0 ==> q6, x, L
+Rule 12: q5, x ==> q5, x, R
+Rule 13: q5, 1 ==> q6, x, L
+Rule 14: q6, 0 ==> q6, 0, L
+Rule 15: q6, 1 ==> q6, 1, L
+Rule 16: q6, x ==> q6, x, L
+Rule 17: q6, # ==> q7, #, L
+Rule 18: q7, 0 ==> q7, 0, L
+Rule 19: q7, 1 ==> q7, 1, L
+Rule 20: q7, x ==> q1, x, R
+Rule 21: q8, x ==> q8, x, R
+Rule 22: q8, _ ==> qaccept, x, R
+
+String: 0#1
+1@0#q10#1
+2@1#xq2#1
+3@2#x#q41
+Rejected
+
+String: 1#0
+1@0#q11#0
+2@1#xq3#0
+3@2#x#q50
+Rejected
+
+String: #0
+1@0#q1#0
+2@1##q80
+Rejected
+
+String: 1#
+1@0#q11#
+2@1#xq3#
+3@2#x#q5_
+Rejected
+
+String: 0100#010
+1@0#q10100#010
+2@1#xq2100#010
+3@2#x1q200#010
+4@3#x10q20#010
+5@4#x100q2#010
+6@5#x100#q4010
+7@4#x100q6#x10
+8@3#x10q70#x10
+9@2#x1q700#x10
+10@1#xq7100#x10
+11@0#q7x100#x10
+12@1#xq1100#x10
+13@2#xxq300#x10
+14@3#xx0q30#x10
+15@4#xx00q3#x10
+16@5#xx00#q5x10
+17@6#xx00#xq510
+18@5#xx00#q6xx0
+19@4#xx00q6#xx0
+20@3#xx0q70#xx0
+21@2#xxq700#xx0
+22@1#xq7x00#xx0
+23@2#xxq100#xx0
+24@3#xxxq20#xx0
+25@4#xxx0q2#xx0
+26@5#xxx0#q4xx0
+27@6#xxx0#xq4x0
+28@7#xxx0#xxq40
+29@6#xxx0#xq6xx
+30@5#xxx0#q6xxx
+31@4#xxx0q6#xxx
+32@3#xxxq70#xxx
+33@2#xxq7x0#xxx
+34@3#xxxq10#xxx
+35@4#xxxxq2#xxx
+36@5#xxxx#q4xxx
+37@6#xxxx#xq4xx
+38@7#xxxx#xxq4x
+39@8#xxxx#xxxq4_
+Rejected
+
+String: 10011#100110
+1@0#q110011#100110
+2@1#xq30011#100110
+3@2#x0q3011#100110
+4@3#x00q311#100110
+5@4#x001q31#100110
+6@5#x0011q3#100110
+7@6#x0011#q5100110
+8@5#x0011q6#x00110
+9@4#x001q71#x00110
+10@3#x00q711#x00110
+11@2#x0q7011#x00110
+12@1#xq70011#x00110
+13@0#q7x0011#x00110
+14@1#xq10011#x00110
+15@2#xxq2011#x00110
+16@3#xx0q211#x00110
+17@4#xx01q21#x00110
+18@5#xx011q2#x00110
+19@6#xx011#q4x00110
+20@7#xx011#xq400110
+21@6#xx011#q6xx0110
+22@5#xx011q6#xx0110
+23@4#xx01q71#xx0110
+24@3#xx0q711#xx0110
+25@2#xxq7011#xx0110
+26@1#xq7x011#xx0110
+27@2#xxq1011#xx0110
+28@3#xxxq211#xx0110
+29@4#xxx1q21#xx0110
+30@5#xxx11q2#xx0110
+31@6#xxx11#q4xx0110
+32@7#xxx11#xq4x0110
+33@8#xxx11#xxq40110
+34@7#xxx11#xq6xx110
+35@6#xxx11#q6xxx110
+36@5#xxx11q6#xxx110
+37@4#xxx1q71#xxx110
+38@3#xxxq711#xxx110
+39@2#xxq7x11#xxx110
+40@3#xxxq111#xxx110
+41@4#xxxxq31#xxx110
+42@5#xxxx1q3#xxx110
+43@6#xxxx1#q5xxx110
+44@7#xxxx1#xq5xx110
+45@8#xxxx1#xxq5x110
+46@9#xxxx1#xxxq5110
+47@8#xxxx1#xxq6xx10
+48@7#xxxx1#xq6xxx10
+49@6#xxxx1#q6xxxx10
+50@5#xxxx1q6#xxxx10
+51@4#xxxxq71#xxxx10
+52@3#xxxq7x1#xxxx10
+53@4#xxxxq11#xxxx10
+54@5#xxxxxq3#xxxx10
+55@6#xxxxx#q5xxxx10
+56@7#xxxxx#xq5xxx10
+57@8#xxxxx#xxq5xx10
+58@9#xxxxx#xxxq5x10
+59@10#xxxxx#xxxxq510
+60@9#xxxxx#xxxq6xx0
+61@8#xxxxx#xxq6xxx0
+62@7#xxxxx#xq6xxxx0
+63@6#xxxxx#q6xxxxx0
+64@5#xxxxxq6#xxxxx0
+65@4#xxxxq7x#xxxxx0
+66@5#xxxxxq1#xxxxx0
+67@6#xxxxx#q8xxxxx0
+68@7#xxxxx#xq8xxxx0
+69@8#xxxxx#xxq8xxx0
+70@9#xxxxx#xxxq8xx0
+71@10#xxxxx#xxxxq8x0
+72@11#xxxxx#xxxxxq80
+Rejected
+
+String: 1001#101
+1@0#q11001#101
+2@1#xq3001#101
+3@2#x0q301#101
+4@3#x00q31#101
+5@4#x001q3#101
+6@5#x001#q5101
+7@4#x001q6#x01
+8@3#x00q71#x01
+9@2#x0q701#x01
+10@1#xq7001#x01
+11@0#q7x001#x01
+12@1#xq1001#x01
+13@2#xxq201#x01
+14@3#xx0q21#x01
+15@4#xx01q2#x01
+16@5#xx01#q4x01
+17@6#xx01#xq401
+18@5#xx01#q6xx1
+19@4#xx01q6#xx1
+20@3#xx0q71#xx1
+21@2#xxq701#xx1
+22@1#xq7x01#xx1
+23@2#xxq101#xx1
+24@3#xxxq21#xx1
+25@4#xxx1q2#xx1
+26@5#xxx1#q4xx1
+27@6#xxx1#xq4x1
+28@7#xxx1#xxq41
+Rejected
+
+M2: Add 1 to binary number in left to right order
+M2/M2-Accept.txt
+=================================================
+
+Transition Rules
+----------------
+Rule 1: A, 0 ==> F, 1, R
+Rule 2: A, 1 ==> A, 0, R
+Rule 3: A, _ ==> F, 1, R
+
+String: 0
+1@0#A0
+2@1#1F
+Accepted
+
+String: 1
+1@0#A1
+2@1#0A_
+3@2#01F
+Accepted
+
+String: 10
+1@0#A10
+2@1#0A0
+3@2#01F
+Accepted
+
+String: 11101
+1@0#A11101
+2@1#0A1101
+3@2#00A101
+4@3#000A01
+5@4#0001F1
+Accepted
+
+String: 10011
+1@0#A10011
+2@1#0A0011
+3@2#01F011
+Accepted
+
+String: 111111
+1@0#A111111
+2@1#0A11111
+3@2#00A1111
+4@3#000A111
+5@4#0000A11
+6@5#00000A1
+7@6#000000A_
+8@7#0000001F
+Accepted
+
+String: _
+1@0#A_
+2@1#1F
+Accepted
+
+M3:Move String 1 right
+M3/M3-Accept.txt
+======================
+
+Transition Rules
+----------------
+Rule 1: S, 0 ==> Z, #, R
+Rule 2: S, 1 ==> O, #, R
+Rule 3: Z, 0 ==> Z, 0, R
+Rule 4: Z, 1 ==> O, 0, R
+Rule 5: Z, _ ==> B, 0, L
+Rule 6: O, 0 ==> Z, 1, R
+Rule 7: O, 1 ==> O, 1, R
+Rule 8: O, _ ==> B, 1, L
+Rule 9: R, 0 ==> R, 0, L
+Rule 10: R, 1 ==> O, 1, L
+Rule 11: R, # ==> F, #, L
+Rule 12: B, 0 ==> B, 0, L
+Rule 13: B, 1 ==> B, 1, L
+Rule 14: B, # ==> F, #, L
+
+String: 0
+1@0#S0
+2@1##Z_
+3@0#B#0
+4@0#F#0
+Accepted
+
+String: 1
+1@0#S1
+2@1##O_
+3@0#B#1
+4@0#F#1
+Accepted
+
+String: 10
+1@0#S10
+2@1##O0
+3@2##1Z_
+4@1##B10
+5@0#B#10
+6@0#F#10
+Accepted
+
+String: 11101
+1@0#S11101
+2@1##O1101
+3@2##1O101
+4@3##11O01
+5@4##111Z1
+6@5##1110O_
+7@4##111B01
+8@3##11B101
+9@2##1B1101
+10@1##B11101
+11@0#B#11101
+12@0#F#11101
+Accepted
+
+String: 10011
+1@0#S10011
+2@1##O0011
+3@2##1Z011
+4@3##10Z11
+5@4##100O1
+6@5##1001O_
+7@4##100B11
+8@3##10B011
+9@2##1B0011
+10@1##B10011
+11@0#B#10011
+12@0#F#10011
+Accepted
+
+String: 111111
+1@0#S111111
+2@1##O11111
+3@2##1O1111
+4@3##11O111
+5@4##111O11
+6@5##1111O1
+7@6##11111O_
+8@5##1111B11
+9@4##111B111
+10@3##11B1111
+11@2##1B11111
+12@1##B111111
+13@0#B#111111
+14@0#F#111111
+Accepted
+
+Mystery Machine
+Mystery/MysteryTest.txt
+=======================
+
+Transition Rules
+----------------
+Rule 1: q1, a ==> qa, #, R
+Rule 2: q1, b ==> qb, #, R
+Rule 3: q1, c ==> qc, #, R
+Rule 4: q1, x ==> q1, #, R
+Rule 5: q1, _ ==> qaccept, #, L
+Rule 6: qa, x ==> qa, x, R
+Rule 7: qa, a ==> qa, a, R
+Rule 8: qa, b ==> qab, x, R
+Rule 9: qa, c ==> qac, x, R
+Rule 10: qa, _ ==> qreject, #, L
+Rule 11: qb, x ==> qb, x, R
+Rule 12: qb, b ==> qb, b, R
+Rule 13: qb, a ==> qba, x, R
+Rule 14: qb, c ==> qbc, x, R
+Rule 15: qb, _ ==> qreject, #, L
+Rule 16: qc, x ==> qc, x, R
+Rule 17: qc, c ==> qc, c, R
+Rule 18: qc, a ==> qca, x, R
+Rule 19: qc, b ==> qcb, x, R
+Rule 20: qc, _ ==> qreject, #, L
+Rule 21: qab, x ==> qab, x, R
+Rule 22: qab, a ==> qab, a, R
+Rule 23: qab, b ==> qab, b, R
+Rule 24: qab, c ==> qabc, x, L
+Rule 25: qab, _ ==> qreject, #, L
+Rule 26: qac, x ==> qac, x, R
+Rule 27: qac, a ==> qac, a, R
+Rule 28: qac, c ==> qac, c, R
+Rule 29: qac, b ==> qabc, x, L
+Rule 30: qac, _ ==> qreject, b, L
+Rule 31: qba, x ==> qba, x, R
+Rule 32: qba, a ==> qba, a, R
+Rule 33: qba, b ==> qba, b, R
+Rule 34: qba, c ==> qabc, x, L
+Rule 35: qba, _ ==> qreject, #, L
+Rule 36: qbc, x ==> qbc, x, R
+Rule 37: qbc, b ==> qbc, b, R
+Rule 38: qbc, c ==> qbc, c, R
+Rule 39: qbc, a ==> qabc, x, L
+Rule 40: qbc, _ ==> qreject, #, L
+Rule 41: qca, x ==> qca, x, R
+Rule 42: qca, a ==> qca, a, R
+Rule 43: qca, c ==> qca, c, R
+Rule 44: qca, b ==> qabc, x, L
+Rule 45: qca, _ ==> qreject, #, L
+Rule 46: qcb, x ==> qcb, x, R
+Rule 47: qcb, c ==> qcb, c, R
+Rule 48: qcb, b ==> qcb, b, R
+Rule 49: qcb, a ==> qabc, x, L
+Rule 50: qcb, _ ==> qreject, #, L
+Rule 51: qabc, a ==> qabc, a, L
+Rule 52: qabc, b ==> qabc, b, L
+Rule 53: qabc, c ==> qabc, c, L
+Rule 54: qabc, x ==> qabc, x, L
+Rule 55: qabc, # ==> q1, #, R
+
+String: abc
+1@0#q1abc
+2@1##qabc
+3@2##xqabc
+4@1##qabcxx
+5@0#qabc#xx
+6@1##q1xx
+7@2###q1x
+8@3####q1_
+9@2###qaccept##
+Accepted
+
+String: cba
+1@0#q1cba
+2@1##qcba
+3@2##xqcba
+4@1##qabcxx
+5@0#qabc#xx
+6@1##q1xx
+7@2###q1x
+8@3####q1_
+9@2###qaccept##
+Accepted
+
+String: cbb
+1@0#q1cbb
+2@1##qcbb
+3@2##xqcbb
+4@3##xbqcb_
+5@2##xqrejectb#
+Rejected
+
+String: abca
+1@0#q1abca
+2@1##qabca
+3@2##xqabca
+4@1##qabcxxa
+5@0#qabc#xxa
+6@1##q1xxa
+7@2###q1xa
+8@3####q1a
+9@4#####qa_
+10@3####qreject##
+Rejected
+
+String: bbaacc
+1@0#q1bbaacc
+2@1##qbbaacc
+3@2##bqbaacc
+4@3##bxqbaacc
+5@4##bxaqbacc
+6@3##bxqabcaxc
+7@2##bqabcxaxc
+8@1##qabcbxaxc
+9@0#qabc#bxaxc
+10@1##q1bxaxc
+11@2###qbxaxc
+12@3###xqbaxc
+13@4###xxqbaxc
+14@5###xxxqbac
+15@4###xxqabcxx
+16@3###xqabcxxx
+17@2###qabcxxxx
+18@1##qabc#xxxx
+19@2###q1xxxx
+20@3####q1xxx
+21@4#####q1xx
+22@5######q1x
+23@6#######q1_
+24@5######qaccept##
+Accepted
+
+String: bacb
+1@0#q1bacb
+2@1##qbacb
+3@2##xqbacb
+4@1##qabcxxb
+5@0#qabc#xxb
+6@1##q1xxb
+7@2###q1xb
+8@3####q1b
+9@4#####qb_
+10@3####qreject##
+Rejected
+
+String: aaacbba
+1@0#q1aaacbba
+2@1##qaaacbba
+3@2##aqaacbba
+4@3##aaqacbba
+5@4##aaxqacbba
+6@3##aaqabcxxba
+7@2##aqabcaxxba
+8@1##qabcaaxxba
+9@0#qabc#aaxxba
+10@1##q1aaxxba
+11@2###qaaxxba
+12@3###aqaxxba
+13@4###axqaxba
+14@5###axxqaba
+15@6###axxxqaba
+16@7###axxxaqab_
+17@6###axxxqrejecta#
+Rejected
+
+String: cbbbaccaa
+1@0#q1cbbbaccaa
+2@1##qcbbbaccaa
+3@2##xqcbbbaccaa
+4@3##xbqcbbaccaa
+5@4##xbbqcbaccaa
+6@3##xbqabcbxccaa
+7@2##xqabcbbxccaa
+8@1##qabcxbbxccaa
+9@0#qabc#xbbxccaa
+10@1##q1xbbxccaa
+11@2###q1bbxccaa
+12@3####qbbxccaa
+13@4####bqbxccaa
+14@5####bxqbccaa
+15@6####bxxqbccaa
+16@7####bxxcqbcaa
+17@6####bxxqabccxa
+18@5####bxqabcxcxa
+19@4####bqabcxxcxa
+20@3####qabcbxxcxa
+21@2###qabc#bxxcxa
+22@3####q1bxxcxa
+23@4#####qbxxcxa
+24@5#####xqbxcxa
+25@6#####xxqbcxa
+26@7#####xxxqbcxa
+27@8#####xxxxqbca
+28@7#####xxxqabcxx
+29@6#####xxqabcxxx
+30@5#####xqabcxxxx
+31@4#####qabcxxxxx
+32@3####qabc#xxxxx
+33@4#####q1xxxxx
+34@5######q1xxxx
+35@6#######q1xxx
+36@7########q1xx
+37@8#########q1x
+38@9##########q1_
+39@8#########qaccept##
+Accepted
+
+String: cbabcacababc
+1@0#q1cbabcacababc
+2@1##qcbabcacababc
+3@2##xqcbabcacababc
+4@1##qabcxxbcacababc
+5@0#qabc#xxbcacababc
+6@1##q1xxbcacababc
+7@2###q1xbcacababc
+8@3####q1bcacababc
+9@4#####qbcacababc
+10@5#####xqbcacababc
+11@4#####qabcxxcababc
+12@3####qabc#xxcababc
+13@4#####q1xxcababc
+14@5######q1xcababc
+15@6#######q1cababc
+16@7########qcababc
+17@8########xqcababc
+18@7########qabcxxabc
+19@6#######qabc#xxabc
+20@7########q1xxabc
+21@8#########q1xabc
+22@9##########q1abc
+23@10###########qabc
+24@11###########xqabc
+25@10###########qabcxx
+26@9##########qabc#xx
+27@10###########q1xx
+28@11############q1x
+29@12#############q1_
+30@11############qaccept##
+Accepted
+
+My Machine: Only Accepts Strings with equal number of 0s and 1s
+MyMachine/MyMachine-Accept.txt
+===============================================================
+
+Transition Rules
+----------------
+Rule 1: q1, 0 ==> q2, #, R
+Rule 2: q1, 1 ==> q3, #, R
+Rule 3: q2, 0 ==> q2, 0, R
+Rule 4: q2, x ==> q2, x, R
+Rule 5: q2, 1 ==> q4, x, L
+Rule 6: q4, x ==> q4, x, L
+Rule 7: q4, 0 ==> q4, 0, L
+Rule 8: q4, 1 ==> q4, 1, L
+Rule 9: q4, # ==> q6, #, R
+Rule 10: q4, _ ==> q4, _, L
+Rule 11: q6, 1 ==> q6, 1, R
+Rule 12: q6, x ==> q6, x, R
+Rule 13: q6, 0 ==> q2, x, R
+Rule 14: q6, _ ==> q8, x, L
+Rule 15: q3, 0 ==> q5, x, L
+Rule 16: q3, 1 ==> q3, 1, R
+Rule 17: q3, x ==> q3, x, R
+Rule 18: q5, 0 ==> q5, 0, L
+Rule 19: q5, 1 ==> q5, 1, L
+Rule 20: q5, x ==> q5, x, L
+Rule 21: q5, # ==> q7, #, R
+Rule 22: q5, _ ==> q5, _, L
+Rule 23: q7, 0 ==> q7, 0, R
+Rule 24: q7, x ==> q7, x, R
+Rule 25: q7, 1 ==> q3, x, R
+Rule 26: q7, _ ==> q8, x, L
+Rule 27: q8, x ==> q8, x, L
+Rule 28: q8, # ==> qaccept, #, R
+Rule 29: q8, 0 ==> qreject, 0, R
+Rule 30: q8, 1 ==> qreject, 1, R
+
+String: 10
+1@0#q110
+2@1##q30
+3@0#q5#x
+4@1##q7x
+5@2##xq7_
+6@1##q8xx
+7@0#q8#xx
+8@1##qacceptxx
+Accepted
+
+String: 01
+1@0#q101
+2@1##q21
+3@0#q4#x
+4@1##q6x
+5@2##xq6_
+6@1##q8xx
+7@0#q8#xx
+8@1##qacceptxx
+Accepted
+
+String: 111000
+1@0#q1111000
+2@1##q311000
+3@2##1q31000
+4@3##11q3000
+5@2##1q51x00
+6@1##q511x00
+7@0#q5#11x00
+8@1##q711x00
+9@2##xq31x00
+10@3##x1q3x00
+11@4##x1xq300
+12@3##x1q5xx0
+13@2##xq51xx0
+14@1##q5x1xx0
+15@0#q5#x1xx0
+16@1##q7x1xx0
+17@2##xq71xx0
+18@3##xxq3xx0
+19@4##xxxq3x0
+20@5##xxxxq30
+21@4##xxxq5xx
+22@3##xxq5xxx
+23@2##xq5xxxx
+24@1##q5xxxxx
+25@0#q5#xxxxx
+26@1##q7xxxxx
+27@2##xq7xxxx
+28@3##xxq7xxx
+29@4##xxxq7xx
+30@5##xxxxq7x
+31@6##xxxxxq7_
+32@5##xxxxq8xx
+33@4##xxxq8xxx
+34@3##xxq8xxxx
+35@2##xq8xxxxx
+36@1##q8xxxxxx
+37@0#q8#xxxxxx
+38@1##qacceptxxxxxx
+Accepted
+
+String: 000111
+1@0#q1000111
+2@1##q200111
+3@2##0q20111
+4@3##00q2111
+5@2##0q40x11
+6@1##q400x11
+7@0#q4#00x11
+8@1##q600x11
+9@2##xq20x11
+10@3##x0q2x11
+11@4##x0xq211
+12@3##x0q4xx1
+13@2##xq40xx1
+14@1##q4x0xx1
+15@0#q4#x0xx1
+16@1##q6x0xx1
+17@2##xq60xx1
+18@3##xxq2xx1
+19@4##xxxq2x1
+20@5##xxxxq21
+21@4##xxxq4xx
+22@3##xxq4xxx
+23@2##xq4xxxx
+24@1##q4xxxxx
+25@0#q4#xxxxx
+26@1##q6xxxxx
+27@2##xq6xxxx
+28@3##xxq6xxx
+29@4##xxxq6xx
+30@5##xxxxq6x
+31@6##xxxxxq6_
+32@5##xxxxq8xx
+33@4##xxxq8xxx
+34@3##xxq8xxxx
+35@2##xq8xxxxx
+36@1##q8xxxxxx
+37@0#q8#xxxxxx
+38@1##qacceptxxxxxx
+Accepted
+
+String: 101010
+1@0#q1101010
+2@1##q301010
+3@0#q5#x1010
+4@1##q7x1010
+5@2##xq71010
+6@3##xxq3010
+7@2##xq5xx10
+8@1##q5xxx10
+9@0#q5#xxx10
+10@1##q7xxx10
+11@2##xq7xx10
+12@3##xxq7x10
+13@4##xxxq710
+14@5##xxxxq30
+15@4##xxxq5xx
+16@3##xxq5xxx
+17@2##xq5xxxx
+18@1##q5xxxxx
+19@0#q5#xxxxx
+20@1##q7xxxxx
+21@2##xq7xxxx
+22@3##xxq7xxx
+23@4##xxxq7xx
+24@5##xxxxq7x
+25@6##xxxxxq7_
+26@5##xxxxq8xx
+27@4##xxxq8xxx
+28@3##xxq8xxxx
+29@2##xq8xxxxx
+30@1##q8xxxxxx
+31@0#q8#xxxxxx
+32@1##qacceptxxxxxx
+Accepted
+
+String: 010101
+1@0#q1010101
+2@1##q210101
+3@0#q4#x0101
+4@1##q6x0101
+5@2##xq60101
+6@3##xxq2101
+7@2##xq4xx01
+8@1##q4xxx01
+9@0#q4#xxx01
+10@1##q6xxx01
+11@2##xq6xx01
+12@3##xxq6x01
+13@4##xxxq601
+14@5##xxxxq21
+15@4##xxxq4xx
+16@3##xxq4xxx
+17@2##xq4xxxx
+18@1##q4xxxxx
+19@0#q4#xxxxx
+20@1##q6xxxxx
+21@2##xq6xxxx
+22@3##xxq6xxx
+23@4##xxxq6xx
+24@5##xxxxq6x
+25@6##xxxxxq6_
+26@5##xxxxq8xx
+27@4##xxxq8xxx
+28@3##xxq8xxxx
+29@2##xq8xxxxx
+30@1##q8xxxxxx
+31@0#q8#xxxxxx
+32@1##qacceptxxxxxx
+Accepted
+
+My Machine: Only Accepts Strings with equal number of 0s and 1s
+MyMachine/MyMachine-Reject.txt
+===============================================================
+
+Transition Rules
+----------------
+Rule 1: q1, 0 ==> q2, #, R
+Rule 2: q1, 1 ==> q3, #, R
+Rule 3: q2, 0 ==> q2, 0, R
+Rule 4: q2, x ==> q2, x, R
+Rule 5: q2, 1 ==> q4, x, L
+Rule 6: q4, x ==> q4, x, L
+Rule 7: q4, 0 ==> q4, 0, L
+Rule 8: q4, 1 ==> q4, 1, L
+Rule 9: q4, # ==> q6, #, R
+Rule 10: q4, _ ==> q4, _, L
+Rule 11: q6, 1 ==> q6, 1, R
+Rule 12: q6, x ==> q6, x, R
+Rule 13: q6, 0 ==> q2, x, R
+Rule 14: q6, _ ==> q8, x, L
+Rule 15: q3, 0 ==> q5, x, L
+Rule 16: q3, 1 ==> q3, 1, R
+Rule 17: q3, x ==> q3, x, R
+Rule 18: q5, 0 ==> q5, 0, L
+Rule 19: q5, 1 ==> q5, 1, L
+Rule 20: q5, x ==> q5, x, L
+Rule 21: q5, # ==> q7, #, R
+Rule 22: q5, _ ==> q5, _, L
+Rule 23: q7, 0 ==> q7, 0, R
+Rule 24: q7, x ==> q7, x, R
+Rule 25: q7, 1 ==> q3, x, R
+Rule 26: q7, _ ==> q8, x, L
+Rule 27: q8, x ==> q8, x, L
+Rule 28: q8, # ==> qaccept, #, R
+Rule 29: q8, 0 ==> qreject, 0, R
+Rule 30: q8, 1 ==> qreject, 1, R
+
+String: 1
+1@0#q11
+2@1##q3_
+Rejected
+
+String: 0
+1@0#q10
+2@1##q2_
+Rejected
+
+String: 111
+1@0#q1111
+2@1##q311
+3@2##1q31
+4@3##11q3_
+Rejected
+
+String: 000
+1@0#q1000
+2@1##q200
+3@2##0q20
+4@3##00q2_
+Rejected
+
+String: 0101011
+1@0#q10101011
+2@1##q2101011
+3@0#q4#x01011
+4@1##q6x01011
+5@2##xq601011
+6@3##xxq21011
+7@2##xq4xx011
+8@1##q4xxx011
+9@0#q4#xxx011
+10@1##q6xxx011
+11@2##xq6xx011
+12@3##xxq6x011
+13@4##xxxq6011
+14@5##xxxxq211
+15@4##xxxq4xx1
+16@3##xxq4xxx1
+17@2##xq4xxxx1
+18@1##q4xxxxx1
+19@0#q4#xxxxx1
+20@1##q6xxxxx1
+21@2##xq6xxxx1
+22@3##xxq6xxx1
+23@4##xxxq6xx1
+24@5##xxxxq6x1
+25@6##xxxxxq61
+26@7##xxxxx1q6_
+27@6##xxxxxq81x
+28@7##xxxxx1qrejectx
+Rejected
+
+String: 11000
+1@0#q111000
+2@1##q31000
+3@2##1q3000
+4@1##q51x00
+5@0#q5#1x00
+6@1##q71x00
+7@2##xq3x00
+8@3##xxq300
+9@2##xq5xx0
+10@1##q5xxx0
+11@0#q5#xxx0
+12@1##q7xxx0
+13@2##xq7xx0
+14@3##xxq7x0
+15@4##xxxq70
+16@5##xxx0q7_
+17@4##xxxq80x
+18@5##xxx0qrejectx
+Rejected

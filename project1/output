@@ -1,0 +1,761 @@
+
+M1:Fig.1.4
+M1/M1-Accept.txt
+================
+
+Transition Rules
+----------------
+Rule 1: q1, 0, q1
+Rule 2: q1, 1, q2
+Rule 3: q2, 1, q2
+Rule 4: q2, 0, q3
+Rule 5: q3, 0, q2
+Rule 6: q3, 1, q2
+
+String: 1
+Step: 1 Rule #2: q1, 1, q2
+Accepted
+
+String: 01
+Step: 1 Rule #1: q1, 0, q1
+Step: 2 Rule #2: q1, 1, q2
+Accepted
+
+String: 11
+Step: 1 Rule #2: q1, 1, q2
+Step: 2 Rule #3: q2, 1, q2
+Accepted
+
+String: 0101010101
+Step: 1 Rule #1: q1, 0, q1
+Step: 2 Rule #2: q1, 1, q2
+Step: 3 Rule #4: q2, 0, q3
+Step: 4 Rule #6: q3, 1, q2
+Step: 5 Rule #4: q2, 0, q3
+Step: 6 Rule #6: q3, 1, q2
+Step: 7 Rule #4: q2, 0, q3
+Step: 8 Rule #6: q3, 1, q2
+Step: 9 Rule #4: q2, 0, q3
+Step: 10 Rule #6: q3, 1, q2
+Accepted
+
+String: 100
+Step: 1 Rule #2: q1, 1, q2
+Step: 2 Rule #4: q2, 0, q3
+Step: 3 Rule #5: q3, 0, q2
+Accepted
+
+String: 0100
+Step: 1 Rule #1: q1, 0, q1
+Step: 2 Rule #2: q1, 1, q2
+Step: 3 Rule #4: q2, 0, q3
+Step: 4 Rule #5: q3, 0, q2
+Accepted
+
+String: 110000
+Step: 1 Rule #2: q1, 1, q2
+Step: 2 Rule #3: q2, 1, q2
+Step: 3 Rule #4: q2, 0, q3
+Step: 4 Rule #5: q3, 0, q2
+Step: 5 Rule #4: q2, 0, q3
+Step: 6 Rule #5: q3, 0, q2
+Accepted
+
+String: 0101000000
+Step: 1 Rule #1: q1, 0, q1
+Step: 2 Rule #2: q1, 1, q2
+Step: 3 Rule #4: q2, 0, q3
+Step: 4 Rule #6: q3, 1, q2
+Step: 5 Rule #4: q2, 0, q3
+Step: 6 Rule #5: q3, 0, q2
+Step: 7 Rule #4: q2, 0, q3
+Step: 8 Rule #5: q3, 0, q2
+Step: 9 Rule #4: q2, 0, q3
+Step: 10 Rule #5: q3, 0, q2
+Accepted
+
+M1:Fig.1.4
+M1/M1-Reject.txt
+================
+
+Transition Rules
+----------------
+Rule 1: q1, 0, q1
+Rule 2: q1, 1, q2
+Rule 3: q2, 1, q2
+Rule 4: q2, 0, q3
+Rule 5: q3, 0, q2
+Rule 6: q3, 1, q2
+
+String: 0
+Step: 1 Rule #1: q1, 0, q1
+Rejected
+
+String: 010
+Step: 1 Rule #1: q1, 0, q1
+Step: 2 Rule #2: q1, 1, q2
+Step: 3 Rule #4: q2, 0, q3
+Rejected
+
+String: 11000
+Step: 1 Rule #2: q1, 1, q2
+Step: 2 Rule #3: q2, 1, q2
+Step: 3 Rule #4: q2, 0, q3
+Step: 4 Rule #5: q3, 0, q2
+Step: 5 Rule #4: q2, 0, q3
+Rejected
+
+String: 01010101010
+Step: 1 Rule #1: q1, 0, q1
+Step: 2 Rule #2: q1, 1, q2
+Step: 3 Rule #4: q2, 0, q3
+Step: 4 Rule #6: q3, 1, q2
+Step: 5 Rule #4: q2, 0, q3
+Step: 6 Rule #6: q3, 1, q2
+Step: 7 Rule #4: q2, 0, q3
+Step: 8 Rule #6: q3, 1, q2
+Step: 9 Rule #4: q2, 0, q3
+Step: 10 Rule #6: q3, 1, q2
+Step: 11 Rule #4: q2, 0, q3
+Rejected
+
+String: 01000
+Step: 1 Rule #1: q1, 0, q1
+Step: 2 Rule #2: q1, 1, q2
+Step: 3 Rule #4: q2, 0, q3
+Step: 4 Rule #5: q3, 0, q2
+Step: 5 Rule #4: q2, 0, q3
+Rejected
+
+String: 11000
+Step: 1 Rule #2: q1, 1, q2
+Step: 2 Rule #3: q2, 1, q2
+Step: 3 Rule #4: q2, 0, q3
+Step: 4 Rule #5: q3, 0, q2
+Step: 5 Rule #4: q2, 0, q3
+Rejected
+
+String: 010100111000
+Step: 1 Rule #1: q1, 0, q1
+Step: 2 Rule #2: q1, 1, q2
+Step: 3 Rule #4: q2, 0, q3
+Step: 4 Rule #6: q3, 1, q2
+Step: 5 Rule #4: q2, 0, q3
+Step: 6 Rule #5: q3, 0, q2
+Step: 7 Rule #3: q2, 1, q2
+Step: 8 Rule #3: q2, 1, q2
+Step: 9 Rule #3: q2, 1, q2
+Step: 10 Rule #4: q2, 0, q3
+Step: 11 Rule #5: q3, 0, q2
+Step: 12 Rule #4: q2, 0, q3
+Rejected
+
+M2:DFA from Fig. 1.44
+M2/M2-Accept.txt
+=====================
+
+Transition Rules
+----------------
+Rule 1: q, a, q
+Rule 2: q, b, q
+Rule 3: q2, a, q23
+Rule 4: q2, b, q3
+Rule 5: q3, a, q13
+Rule 6: q3, b, q
+Rule 7: q13, a, q13
+Rule 8: q13, b, q2
+Rule 9: q23, a, q123
+Rule 10: q23, b, q3
+Rule 11: q123, a, q123
+Rule 12: q123, b, q23
+
+String: a
+Step: 1 Rule #7: q13, a, q13
+Accepted
+
+String: baa
+Step: 1 Rule #8: q13, b, q2
+Step: 2 Rule #3: q2, a, q23
+Step: 3 Rule #9: q23, a, q123
+Accepted
+
+String: baba
+Step: 1 Rule #8: q13, b, q2
+Step: 2 Rule #3: q2, a, q23
+Step: 3 Rule #10: q23, b, q3
+Step: 4 Rule #5: q3, a, q13
+Accepted
+
+String: ababa
+Step: 1 Rule #7: q13, a, q13
+Step: 2 Rule #8: q13, b, q2
+Step: 3 Rule #3: q2, a, q23
+Step: 4 Rule #10: q23, b, q3
+Step: 5 Rule #5: q3, a, q13
+Accepted
+
+String: aaabbaaa
+Step: 1 Rule #7: q13, a, q13
+Step: 2 Rule #7: q13, a, q13
+Step: 3 Rule #7: q13, a, q13
+Step: 4 Rule #8: q13, b, q2
+Step: 5 Rule #4: q2, b, q3
+Step: 6 Rule #5: q3, a, q13
+Step: 7 Rule #7: q13, a, q13
+Step: 8 Rule #7: q13, a, q13
+Accepted
+
+String: ababaaa
+Step: 1 Rule #7: q13, a, q13
+Step: 2 Rule #8: q13, b, q2
+Step: 3 Rule #3: q2, a, q23
+Step: 4 Rule #10: q23, b, q3
+Step: 5 Rule #5: q3, a, q13
+Step: 6 Rule #7: q13, a, q13
+Step: 7 Rule #7: q13, a, q13
+Accepted
+
+String: ababaabaabaaa
+Step: 1 Rule #7: q13, a, q13
+Step: 2 Rule #8: q13, b, q2
+Step: 3 Rule #3: q2, a, q23
+Step: 4 Rule #10: q23, b, q3
+Step: 5 Rule #5: q3, a, q13
+Step: 6 Rule #7: q13, a, q13
+Step: 7 Rule #8: q13, b, q2
+Step: 8 Rule #3: q2, a, q23
+Step: 9 Rule #9: q23, a, q123
+Step: 10 Rule #12: q123, b, q23
+Step: 11 Rule #9: q23, a, q123
+Step: 12 Rule #11: q123, a, q123
+Step: 13 Rule #11: q123, a, q123
+Accepted
+
+M2:DFA from Fig. 1.44
+M2/M2-Reject.txt
+=====================
+
+Transition Rules
+----------------
+Rule 1: q, a, q
+Rule 2: q, b, q
+Rule 3: q2, a, q23
+Rule 4: q2, b, q3
+Rule 5: q3, a, q13
+Rule 6: q3, b, q
+Rule 7: q13, a, q13
+Rule 8: q13, b, q2
+Rule 9: q23, a, q123
+Rule 10: q23, b, q3
+Rule 11: q123, a, q123
+Rule 12: q123, b, q23
+
+String: ba
+Step: 1 Rule #8: q13, b, q2
+Step: 2 Rule #3: q2, a, q23
+Rejected
+
+String: bb
+Step: 1 Rule #8: q13, b, q2
+Step: 2 Rule #4: q2, b, q3
+Rejected
+
+String: bbbb
+Step: 1 Rule #8: q13, b, q2
+Step: 2 Rule #4: q2, b, q3
+Step: 3 Rule #6: q3, b, q
+Step: 4 Rule #2: q, b, q
+Rejected
+
+String: babbbab
+Step: 1 Rule #8: q13, b, q2
+Step: 2 Rule #3: q2, a, q23
+Step: 3 Rule #10: q23, b, q3
+Step: 4 Rule #6: q3, b, q
+Step: 5 Rule #2: q, b, q
+Step: 6 Rule #1: q, a, q
+Step: 7 Rule #2: q, b, q
+Rejected
+
+String: bab
+Step: 1 Rule #8: q13, b, q2
+Step: 2 Rule #3: q2, a, q23
+Step: 3 Rule #10: q23, b, q3
+Rejected
+
+String: baaab
+Step: 1 Rule #8: q13, b, q2
+Step: 2 Rule #3: q2, a, q23
+Step: 3 Rule #9: q23, a, q123
+Step: 4 Rule #11: q123, a, q123
+Step: 5 Rule #12: q123, b, q23
+Rejected
+
+String: bbb
+Step: 1 Rule #8: q13, b, q2
+Step: 2 Rule #4: q2, b, q3
+Step: 3 Rule #6: q3, b, q
+Rejected
+
+String: baaabbbbbbbbabbaabbaaab
+Step: 1 Rule #8: q13, b, q2
+Step: 2 Rule #3: q2, a, q23
+Step: 3 Rule #9: q23, a, q123
+Step: 4 Rule #11: q123, a, q123
+Step: 5 Rule #12: q123, b, q23
+Step: 6 Rule #10: q23, b, q3
+Step: 7 Rule #6: q3, b, q
+Step: 8 Rule #2: q, b, q
+Step: 9 Rule #2: q, b, q
+Step: 10 Rule #2: q, b, q
+Step: 11 Rule #2: q, b, q
+Step: 12 Rule #2: q, b, q
+Step: 13 Rule #1: q, a, q
+Step: 14 Rule #2: q, b, q
+Step: 15 Rule #2: q, b, q
+Step: 16 Rule #1: q, a, q
+Step: 17 Rule #1: q, a, q
+Step: 18 Rule #2: q, b, q
+Step: 19 Rule #2: q, b, q
+Step: 20 Rule #1: q, a, q
+Step: 21 Rule #1: q, a, q
+Step: 22 Rule #1: q, a, q
+Step: 23 Rule #2: q, b, q
+Rejected
+
+M3:DFA from Hopcroft p 50 
+M3/M3-Accept.txt
+==========================
+
+Transition Rules
+----------------
+Rule 1: q0, 1, q1
+Rule 2: q0, 0, q2
+Rule 3: q1, 1, q0
+Rule 4: q1, 0, q3
+Rule 5: q2, 1, q3
+Rule 6: q2, 0, q0
+Rule 7: q3, 1, q2
+Rule 8: q3, 0, q1
+
+String: 00
+Step: 1 Rule #2: q0, 0, q2
+Step: 2 Rule #6: q2, 0, q0
+Accepted
+
+String: 11
+Step: 1 Rule #1: q0, 1, q1
+Step: 2 Rule #3: q1, 1, q0
+Accepted
+
+String: 0110
+Step: 1 Rule #2: q0, 0, q2
+Step: 2 Rule #5: q2, 1, q3
+Step: 3 Rule #7: q3, 1, q2
+Step: 4 Rule #6: q2, 0, q0
+Accepted
+
+String: 01010101
+Step: 1 Rule #2: q0, 0, q2
+Step: 2 Rule #5: q2, 1, q3
+Step: 3 Rule #8: q3, 0, q1
+Step: 4 Rule #3: q1, 1, q0
+Step: 5 Rule #2: q0, 0, q2
+Step: 6 Rule #5: q2, 1, q3
+Step: 7 Rule #8: q3, 0, q1
+Step: 8 Rule #3: q1, 1, q0
+Accepted
+
+String: 00010111
+Step: 1 Rule #2: q0, 0, q2
+Step: 2 Rule #6: q2, 0, q0
+Step: 3 Rule #2: q0, 0, q2
+Step: 4 Rule #5: q2, 1, q3
+Step: 5 Rule #8: q3, 0, q1
+Step: 6 Rule #3: q1, 1, q0
+Step: 7 Rule #1: q0, 1, q1
+Step: 8 Rule #3: q1, 1, q0
+Accepted
+
+String: 11101000
+Step: 1 Rule #1: q0, 1, q1
+Step: 2 Rule #3: q1, 1, q0
+Step: 3 Rule #1: q0, 1, q1
+Step: 4 Rule #4: q1, 0, q3
+Step: 5 Rule #7: q3, 1, q2
+Step: 6 Rule #6: q2, 0, q0
+Step: 7 Rule #2: q0, 0, q2
+Step: 8 Rule #6: q2, 0, q0
+Accepted
+
+String: 10010110
+Step: 1 Rule #1: q0, 1, q1
+Step: 2 Rule #4: q1, 0, q3
+Step: 3 Rule #8: q3, 0, q1
+Step: 4 Rule #3: q1, 1, q0
+Step: 5 Rule #2: q0, 0, q2
+Step: 6 Rule #5: q2, 1, q3
+Step: 7 Rule #7: q3, 1, q2
+Step: 8 Rule #6: q2, 0, q0
+Accepted
+
+M3:DFA from Hopcroft p 50 
+M3/M3-Reject.txt
+==========================
+
+Transition Rules
+----------------
+Rule 1: q0, 1, q1
+Rule 2: q0, 0, q2
+Rule 3: q1, 1, q0
+Rule 4: q1, 0, q3
+Rule 5: q2, 1, q3
+Rule 6: q2, 0, q0
+Rule 7: q3, 1, q2
+Rule 8: q3, 0, q1
+
+String: 1
+Step: 1 Rule #1: q0, 1, q1
+Rejected
+
+String: 0
+Step: 1 Rule #2: q0, 0, q2
+Rejected
+
+String: 110
+Step: 1 Rule #1: q0, 1, q1
+Step: 2 Rule #3: q1, 1, q0
+Step: 3 Rule #2: q0, 0, q2
+Rejected
+
+String: 010
+Step: 1 Rule #2: q0, 0, q2
+Step: 2 Rule #5: q2, 1, q3
+Step: 3 Rule #8: q3, 0, q1
+Rejected
+
+String: 11000
+Step: 1 Rule #1: q0, 1, q1
+Step: 2 Rule #3: q1, 1, q0
+Step: 3 Rule #2: q0, 0, q2
+Step: 4 Rule #6: q2, 0, q0
+Step: 5 Rule #2: q0, 0, q2
+Rejected
+
+String: 00111
+Step: 1 Rule #2: q0, 0, q2
+Step: 2 Rule #6: q2, 0, q0
+Step: 3 Rule #1: q0, 1, q1
+Step: 4 Rule #3: q1, 1, q0
+Step: 5 Rule #1: q0, 1, q1
+Rejected
+
+String: 1011011011
+Step: 1 Rule #1: q0, 1, q1
+Step: 2 Rule #4: q1, 0, q3
+Step: 3 Rule #7: q3, 1, q2
+Step: 4 Rule #5: q2, 1, q3
+Step: 5 Rule #8: q3, 0, q1
+Step: 6 Rule #3: q1, 1, q0
+Step: 7 Rule #1: q0, 1, q1
+Step: 8 Rule #4: q1, 0, q3
+Step: 9 Rule #7: q3, 1, q2
+Step: 10 Rule #5: q2, 1, q3
+Rejected
+
+My Machine
+MyMachine/My-Machine-Accept.txt
+===============================
+
+Transition Rules
+----------------
+Rule 1: q1, 0, q2
+Rule 2: q1, 1, q1
+Rule 3: q2, 0, q2
+Rule 4: q2, 1, q3
+Rule 5: q3, 0, q1
+Rule 6: q3, 1, q2
+
+String: 01
+Step: 1 Rule #1: q1, 0, q2
+Step: 2 Rule #4: q2, 1, q3
+Accepted
+
+String: 11101
+Step: 1 Rule #2: q1, 1, q1
+Step: 2 Rule #2: q1, 1, q1
+Step: 3 Rule #2: q1, 1, q1
+Step: 4 Rule #1: q1, 0, q2
+Step: 5 Rule #4: q2, 1, q3
+Accepted
+
+String: 01001
+Step: 1 Rule #1: q1, 0, q2
+Step: 2 Rule #4: q2, 1, q3
+Step: 3 Rule #5: q3, 0, q1
+Step: 4 Rule #1: q1, 0, q2
+Step: 5 Rule #4: q2, 1, q3
+Accepted
+
+String: 0111
+Step: 1 Rule #1: q1, 0, q2
+Step: 2 Rule #4: q2, 1, q3
+Step: 3 Rule #6: q3, 1, q2
+Step: 4 Rule #4: q2, 1, q3
+Accepted
+
+My Machine
+MyMachine/My-Machine-Reject.txt
+===============================
+
+Transition Rules
+----------------
+Rule 1: q1, 0, q2
+Rule 2: q1, 1, q1
+Rule 3: q2, 0, q2
+Rule 4: q2, 1, q3
+Rule 5: q3, 0, q1
+Rule 6: q3, 1, q2
+
+String: 11111
+Step: 1 Rule #2: q1, 1, q1
+Step: 2 Rule #2: q1, 1, q1
+Step: 3 Rule #2: q1, 1, q1
+Step: 4 Rule #2: q1, 1, q1
+Step: 5 Rule #2: q1, 1, q1
+Rejected
+
+String: 00011
+Step: 1 Rule #1: q1, 0, q2
+Step: 2 Rule #3: q2, 0, q2
+Step: 3 Rule #3: q2, 0, q2
+Step: 4 Rule #4: q2, 1, q3
+Step: 5 Rule #6: q3, 1, q2
+Rejected
+
+String: 00010
+Step: 1 Rule #1: q1, 0, q2
+Step: 2 Rule #3: q2, 0, q2
+Step: 3 Rule #3: q2, 0, q2
+Step: 4 Rule #4: q2, 1, q3
+Step: 5 Rule #5: q3, 0, q1
+Rejected
+
+String: 010
+Step: 1 Rule #1: q1, 0, q2
+Step: 2 Rule #4: q2, 1, q3
+Step: 3 Rule #5: q3, 0, q1
+Rejected
+
+String: 0
+Step: 1 Rule #1: q1, 0, q2
+Rejected
+
+String: 1
+Step: 1 Rule #2: q1, 1, q1
+Rejected
+
+Mystery Machine 
+Mystery/Mystery-test.txt
+========================
+
+Transition Rules
+----------------
+Rule 1: 0, p, 0
+Rule 2: 0, m, 0
+Rule 3: 0, d, 0
+Rule 4: 0, z, 0
+Rule 5: 0, o, 0
+Rule 6: 1, p, 2
+Rule 7: 1, m, 9
+Rule 8: 1, d, 0
+Rule 9: 1, z, 3
+Rule 10: 1, o, 4
+Rule 11: 2, p, 0
+Rule 12: 2, m, 0
+Rule 13: 2, d, 0
+Rule 14: 2, z, 3
+Rule 15: 2, o, 4
+Rule 16: 3, p, 0
+Rule 17: 3, m, 0
+Rule 18: 3, d, 5
+Rule 19: 3, z, 0
+Rule 20: 3, o, 0
+Rule 21: 4, p, 0
+Rule 22: 4, m, 0
+Rule 23: 4, d, 5
+Rule 24: 4, z, 4
+Rule 25: 4, o, 4
+Rule 26: 5, p, 0
+Rule 27: 5, m, 0
+Rule 28: 5, d, 0
+Rule 29: 5, z, 6
+Rule 30: 5, o, 7
+Rule 31: 6, p, 0
+Rule 32: 6, m, 0
+Rule 33: 6, d, 0
+Rule 34: 6, z, 8
+Rule 35: 6, o, 7
+Rule 36: 7, p, 0
+Rule 37: 7, m, 0
+Rule 38: 7, d, 0
+Rule 39: 7, z, 7
+Rule 40: 7, o, 7
+Rule 41: 8, p, 0
+Rule 42: 8, m, 0
+Rule 43: 8, d, 0
+Rule 44: 8, z, 8
+Rule 45: 8, o, 7
+Rule 46: 9, p, 0
+Rule 47: 9, m, 0
+Rule 48: 9, d, 0
+Rule 49: 9, z, 10
+Rule 50: 9, o, 4
+Rule 51: 10, p, 0
+Rule 52: 10, m, 0
+Rule 53: 10, d, 11
+Rule 54: 10, z, 0
+Rule 55: 10, o, 0
+Rule 56: 11, p, 0
+Rule 57: 11, m, 0
+Rule 58: 11, d, 0
+Rule 59: 11, z, 8
+Rule 60: 11, o, 7
+
+String: do
+Step: 1 Rule #8: 1, d, 0
+Step: 2 Rule #5: 0, o, 0
+Rejected
+
+String: mdzzzo
+Step: 1 Rule #7: 1, m, 9
+Step: 2 Rule #48: 9, d, 0
+Step: 3 Rule #4: 0, z, 0
+Step: 4 Rule #4: 0, z, 0
+Step: 5 Rule #4: 0, z, 0
+Step: 6 Rule #5: 0, o, 0
+Rejected
+
+String: mp
+Step: 1 Rule #7: 1, m, 9
+Step: 2 Rule #46: 9, p, 0
+Rejected
+
+String: mz
+Step: 1 Rule #7: 1, m, 9
+Step: 2 Rule #49: 9, z, 10
+Rejected
+
+String: mzd
+Step: 1 Rule #7: 1, m, 9
+Step: 2 Rule #49: 9, z, 10
+Step: 3 Rule #53: 10, d, 11
+Rejected
+
+String: mzdo
+Step: 1 Rule #7: 1, m, 9
+Step: 2 Rule #49: 9, z, 10
+Step: 3 Rule #53: 10, d, 11
+Step: 4 Rule #60: 11, o, 7
+Accepted
+
+String: mzdz
+Step: 1 Rule #7: 1, m, 9
+Step: 2 Rule #49: 9, z, 10
+Step: 3 Rule #53: 10, d, 11
+Step: 4 Rule #59: 11, z, 8
+Rejected
+
+String: mzdzzo
+Step: 1 Rule #7: 1, m, 9
+Step: 2 Rule #49: 9, z, 10
+Step: 3 Rule #53: 10, d, 11
+Step: 4 Rule #59: 11, z, 8
+Step: 5 Rule #44: 8, z, 8
+Step: 6 Rule #45: 8, o, 7
+Accepted
+
+String: mzdzzz
+Step: 1 Rule #7: 1, m, 9
+Step: 2 Rule #49: 9, z, 10
+Step: 3 Rule #53: 10, d, 11
+Step: 4 Rule #59: 11, z, 8
+Step: 5 Rule #44: 8, z, 8
+Step: 6 Rule #44: 8, z, 8
+Rejected
+
+String: pd
+Step: 1 Rule #6: 1, p, 2
+Step: 2 Rule #13: 2, d, 0
+Rejected
+
+String: pdo
+Step: 1 Rule #6: 1, p, 2
+Step: 2 Rule #13: 2, d, 0
+Step: 3 Rule #5: 0, o, 0
+Rejected
+
+String: pm
+Step: 1 Rule #6: 1, p, 2
+Step: 2 Rule #12: 2, m, 0
+Rejected
+
+String: pz
+Step: 1 Rule #6: 1, p, 2
+Step: 2 Rule #14: 2, z, 3
+Accepted
+
+String: pzdz
+Step: 1 Rule #6: 1, p, 2
+Step: 2 Rule #14: 2, z, 3
+Step: 3 Rule #18: 3, d, 5
+Step: 4 Rule #29: 5, z, 6
+Accepted
+
+String: pzdzzo
+Step: 1 Rule #6: 1, p, 2
+Step: 2 Rule #14: 2, z, 3
+Step: 3 Rule #18: 3, d, 5
+Step: 4 Rule #29: 5, z, 6
+Step: 5 Rule #34: 6, z, 8
+Step: 6 Rule #45: 8, o, 7
+Accepted
+
+String: pzdzzo
+Step: 1 Rule #6: 1, p, 2
+Step: 2 Rule #14: 2, z, 3
+Step: 3 Rule #18: 3, d, 5
+Step: 4 Rule #29: 5, z, 6
+Step: 5 Rule #34: 6, z, 8
+Step: 6 Rule #45: 8, o, 7
+Accepted
+
+String: z
+Step: 1 Rule #9: 1, z, 3
+Accepted
+
+String: zdo
+Step: 1 Rule #9: 1, z, 3
+Step: 2 Rule #18: 3, d, 5
+Step: 3 Rule #30: 5, o, 7
+Accepted
+
+String: zdz
+Step: 1 Rule #9: 1, z, 3
+Step: 2 Rule #18: 3, d, 5
+Step: 3 Rule #29: 5, z, 6
+Accepted
+
+String: zdzo
+Step: 1 Rule #9: 1, z, 3
+Step: 2 Rule #18: 3, d, 5
+Step: 3 Rule #29: 5, z, 6
+Step: 4 Rule #35: 6, o, 7
+Accepted
+
+String: zdzz
+Step: 1 Rule #9: 1, z, 3
+Step: 2 Rule #18: 3, d, 5
+Step: 3 Rule #29: 5, z, 6
+Step: 4 Rule #34: 6, z, 8
+Rejected
